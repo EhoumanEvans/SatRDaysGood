@@ -3,8 +3,8 @@ usethis::git_sitrep()
 usethis::git_vaccinate()
 # Set your configuration
 usethis::use_git_config(
-  user.name = "EhoumanEvans",
-  user.email = "ehoumanevans@gmail.com")
+  user.name = " ",
+  user.email = " ")
 
 
 # Install Git before doing anything
@@ -17,14 +17,15 @@ usethis::use_git_config(
 # Configure Git after installation
 library(usethis)
 edit_git_config()
-EhoumanEvans
+
+
 
 # Create a Personal Access Token (PAT) on GitHub
 library(usethis)
 
 create_github_token()
   # Copy the token Generated in Github
-  # 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
+  # and save is in you .gitconfig
 
 # Relaunch RStudio
 # Store Personal Access Token to Connect RStudio and GitHub
@@ -33,7 +34,7 @@ library(gitcreds)
 gitcreds_set()
 
 
-  # Relaunch RStudio
+# Relaunch RStudio
 # Connect RStudio Projects with GitHub Repositories
 # RStudio First
 library(usethis)
@@ -59,38 +60,3 @@ use_github()
 
 
 #
-
-
-
-# ensuite
-
-
-# Autres commandes
-git status --ignored
-git ls-files -o
-
-# .gitignored files still shown in RStudio
-https://stackoverflow.com/questions/36185456/gitignored-files-still-shown-in-rstudio
-
-    # Once you add files to git, it will keep tracking them,
-    # so we have to delete them and commit your deletion
-      git rm -r --cached .Rproj.user/**
-
-   # Commit the deleted files
-    git commit -m "Removed files...."
-
-  # now add it to the `.gitignore` and the files will be ignored
-    echo '.Rproj.user/**' > .gitignore
-
-# track a file
-    git add fta_assessment.Rproj
-    git status
-
-#
-git remote add origin https://github.com/EhoumanEvans/fta_assessment.git
-# git remote set-url origin https://github.com/EhoumanEvans/fta_assessment.git
-git branch -M main
-git push -u origin main
-# https://codehorizons.com/making-your-first-github-r-project/
-
-
